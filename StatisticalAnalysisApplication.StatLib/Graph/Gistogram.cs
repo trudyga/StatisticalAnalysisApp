@@ -33,10 +33,15 @@ namespace StatisticalAnalysisApplication.StatLib.Graph
             {
                 double lower = lowerBound + i * step;
                 double upper = lower + step;
-                int amountOfValues = sampleData.Count(val => 
-                    val >= lower && val <= upper);
+                int amountOfValues = sampleData.Count(val =>
+                    val >= lower && val < upper);
 
-                divided.Add(new KeyValuePair<Range, int>(new Range(lower, upper), amountOfValues));
+                if (upper != higherBound)
+                    divided.Add(new KeyValuePair<Range, int>(new Range(lower, upper),
+                        amountOfValues));
+                else
+                    divided.Add(new KeyValuePair<Range, int>(new Range(lower, upper),
+                        amountOfValues + 1));
             }
 
             return divided;

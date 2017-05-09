@@ -47,7 +47,6 @@
   <ItemGroup>
     <Compile Include="GraphTests\GistogramTest.cs" />
     <Compile Include="MainOperationsTest.cs" />
-    <Compile Include="NormalizationTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegressionTests\LinearFunctionIndentificatorTest.cs" />
   </ItemGroup>

@@ -78,9 +78,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\PrimaryAnalysisController.cs" />
+    <Compile Include="Controllers\SecondaryAnalysisContoller.cs" />
+    <Compile Include="Filters\Exception\SampleExceptionAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\PraphsData\GistogramData.cs" />
+    <Compile Include="Models\PrimaryAnalysis\MainPrimaryAnalysisData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -94,8 +99,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
-    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\StatisticalAnalysisApplication.StatLib\StatisticalAnalysisApplication.StatLib.csproj">
+      <Project>{fcff4967-6cea-472c-892b-36c318301130}</Project>
+      <Name>StatisticalAnalysisApplication.StatLib</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

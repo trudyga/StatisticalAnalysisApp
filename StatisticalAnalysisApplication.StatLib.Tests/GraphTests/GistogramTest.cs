@@ -44,5 +44,18 @@ namespace StatisticalAnalysisApplication.StatLib.Tests.GraphTests
             Assert.That(classesList.Count, Is.EqualTo(amountOfClasses));
         }
 
+        [Test(Author = "Vlad Sereda")]
+        [TestCase(new double[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10})]
+        [TestCase(new double[] { 1 })]
+        public void DividByClasses_sampleListDataValues_shouldHaveSameAmountOfValues(
+            IEnumerable<double> sample)
+        {
+            var classes = gistogram.DivideByClasses(sample);
+
+            int amountOfValues = classes.Sum(val => val.Value);
+            int expected = sample.Count();
+
+            Assert.That(amountOfValues, Is.EqualTo(expected));
+        }
     }
 }

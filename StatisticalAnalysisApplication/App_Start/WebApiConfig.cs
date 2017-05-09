@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 
+using StatisticalAnalysisApplication.Filters.Exception;
+
 namespace StatisticalAnalysisApplication
 {
     public static class WebApiConfig
@@ -15,10 +17,12 @@ namespace StatisticalAnalysisApplication
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(
-                name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
-            );
+                name: "PrimaryAnalysisRoute",
+                routeTemplate: "api/{controller}/{action}",
+                defaults: new
+                {
+                    action = RouteParameter.Optional
+                });
         }
     }
 }
