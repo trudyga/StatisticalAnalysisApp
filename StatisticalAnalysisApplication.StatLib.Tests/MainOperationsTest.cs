@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using NUnit.Framework;
-using StatisticalAnalisysApplication.StatLib;
+using StatisticalAnalysisApplication.StatLib;
 
 namespace StatisticalAnalysisApplication.StatLib.Tests
 {

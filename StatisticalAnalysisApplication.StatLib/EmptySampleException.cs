@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StatisticalAnalisysApplication.StatLib
+namespace StatisticalAnalysisApplication.StatLib
 {
     public class EmptySampleException: Exception
     {

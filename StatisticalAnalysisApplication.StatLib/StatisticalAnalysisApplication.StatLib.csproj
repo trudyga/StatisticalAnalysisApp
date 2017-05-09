@@ -7,10 +7,11 @@
     <ProjectGuid>{FCFF4967-6CEA-472C-892B-36C318301130}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>StatisticalAnalisysApplication.StatLib</RootNamespace>
-    <AssemblyName>StatisticalAnalisysApplication.StatLib</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <RootNamespace>StatisticalAnalysisApplication.StatLib</RootNamespace>
+    <AssemblyName>StatisticalAnalysisApplication.StatLib</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -40,10 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Corelation\Corelation.cs" />
     <Compile Include="EmptySampleException.cs" />
+    <Compile Include="Graph\Gistogram.cs" />
+    <Compile Include="Graph\Range.cs" />
     <Compile Include="MainOperations.cs" />
+    <Compile Include="Normalization.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Regression\LinearFunction.cs" />
+    <Compile Include="Regression\LinearFunctionIndentificator.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
