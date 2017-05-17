@@ -18,6 +18,13 @@ namespace StatisticalAnalysisApplication.Controllers
     [EnableCors(origins: "*", headers:"*", methods:"*")]
     public class PrimaryAnalysisController : ApiController
     {
+        [HttpGet]
+        [Route("api/value")]
+        public string GetValue()
+        {
+            return "Value returned from server";
+        }
+
         [HttpPost]
         public IHttpActionResult Analyze([FromBody]List<double> sampleData)
         {

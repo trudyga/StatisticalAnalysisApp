@@ -22,7 +22,7 @@ namespace StatisticalAnalysisApplication.StatLib.Corelation
             // and calculate sum of ranks by keys
 
             // result is (firstSum + secondsSum)/(amount*(amount - 1))
-            throw new NotImplementedException();
+            return this.CoefWithAbnormDistr(sampleDataPair.ToList());
         }
 
         private double sumOfRanks(IEnumerable<double> ranks)
@@ -36,5 +36,48 @@ namespace StatisticalAnalysisApplication.StatLib.Corelation
         }
 
 
+
+        private double CoefWithAbnormDistr(List<KeyValuePair<double, double>> sampleDataPair)
+        {
+            List<double> rangValX = new List<double>();
+            List<double> rangValY = new List<double>();
+            double rang = 0;
+
+            sampleDataPair.OrderBy(pair => pair.Value);
+            double val;
+            for (int i = 0; i < sampleDataPair.Count - 1; i++)
+            {
+                val = -1;
+                for (int j = i + 1; j < sampleDataPair.Count; j++)
+                {
+                    if (sampleDataPair[j].Key > sampleDataPair[i].Key)
+                    {
+                        val = 1;
+                        break;
+                    }
+                }
+                rangValX.Add(val);
+            }
+            rangValX.Add(-1);
+            sampleDataPair.OrderBy(pair => pair.Key);
+            for (int i = 0; i < sampleDataPair.Count - 1; i++)
+            {
+                val = -1;
+                for (int j = i + 1; j < sampleDataPair.Count; j++)
+                {
+                    if (sampleDataPair[j].Value > sampleDataPair[i].Value)
+                    {
+                        val = 1;
+                        break;
+                    }
+                }
+                rangValY.Add(val);
+            }
+            rangValY.Add(-1);
+            for (int i = 0; i < sampleDataPair.Count(); i++)
+                rang += (rangValX[i] + rangValY[i]);
+            var correlationCoeficient = (2.0 * rang) / (sampleDataPair.Count * (sampleDataPair.Count - 1));
+            return correlationCoeficient;
+        }
     }
 }

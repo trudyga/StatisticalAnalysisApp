@@ -19,7 +19,7 @@ namespace StatisticalAnalysisApplication
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(
-                name: "PrimaryAnalysisRoute",
+                name: "AnalysisRoute",
                 routeTemplate: "api/{controller}/{action}",
                 defaults: new
                 {
