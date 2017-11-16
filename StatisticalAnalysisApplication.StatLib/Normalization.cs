@@ -1,4 +1,7 @@
-﻿using System;
+﻿/// <summary>
+/// File hold numeric sample normalization alogirthm
+/// </summary>
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace StatisticalAnalysisApplication.StatLib
 {
+    /// <summary>
+    /// Instances of the class Normalize values in numeric sample
+    /// </summary>
     public class Normalization
     {
         /// <summary>

@@ -14,6 +14,9 @@ using StatisticalAnalysisApplication.StatLib;
 
 namespace StatisticalAnalysisApplication.Filters.Exception
 {
+    /// <summary>
+    /// Class Represents Routing Data Filter for ASP.NET WebApi
+    /// </summary>
     public class SampleExceptionFilterAttribute :  ExceptionFilterAttribute
     {
         public override void OnException(HttpActionExecutedContext actionExecutedContext)

@@ -1,4 +1,7 @@
-﻿using System;
+﻿/// <summary>
+/// File store main statistical analysis operation alogirthms
+/// </summary>
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace StatisticalAnalysisApplication.StatLib
 {
+    /// <summary>
+    /// Class that define basic statistical analysis operations like methemetical expectation, dispersion, etc.
+    /// </summary>
     public class MainOperations
     {
         /// <summary>

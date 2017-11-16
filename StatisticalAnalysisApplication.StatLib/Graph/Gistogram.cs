@@ -1,4 +1,7 @@
-﻿using System;
+﻿/// <summary>
+/// File that hold alogithms correspondent to gistogram data type
+/// </summary>
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace StatisticalAnalysisApplication.StatLib.Graph
 {
+    /// <summary>
+    /// Class hold program logic for producing minimum data needed for Gistogram creation 
+    /// </summary>
     public class Gistogram
     {
         /// <summary>

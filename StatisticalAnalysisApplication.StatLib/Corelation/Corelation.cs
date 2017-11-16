@@ -1,4 +1,7 @@
-﻿using System;
+﻿/// <summary>
+/// File hold program logic for dealing with corelation factor of sample data value pairs
+/// </summary>
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +11,11 @@ namespace StatisticalAnalysisApplication.StatLib.Corelation
 {
     public class Corelation
     {
+        /// <summary>
+        /// Calculation corelation coeficient by applying candal method to list of numeric value pairs
+        /// </summary>
+        /// <param name="sampleDataPair"></param>
+        /// <returns></returns>
         public double CendalMethod(IEnumerable<KeyValuePair<double, double>> sampleDataPair)
         {
             if (sampleDataPair.Count() == 0)
@@ -25,18 +33,11 @@ namespace StatisticalAnalysisApplication.StatLib.Corelation
             return this.CoefWithAbnormDistr(sampleDataPair.ToList());
         }
 
-        private double sumOfRanks(IEnumerable<double> ranks)
-        {
-            throw new NotImplementedException();
-        }
-
-        private double rank(IEnumerable<double> values)
-        {
-            throw new NotImplementedException();
-        }
-
-
-
+        /// <summary>
+        /// Return Cendal Coeficient with abnormal distribution
+        /// </summary>
+        /// <param name="sampleDataPair"></param>
+        /// <returns></returns>
         private double CoefWithAbnormDistr(List<KeyValuePair<double, double>> sampleDataPair)
         {
             List<double> rangValX = new List<double>();

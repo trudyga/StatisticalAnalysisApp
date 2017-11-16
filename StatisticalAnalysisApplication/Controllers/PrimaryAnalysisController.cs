@@ -1,4 +1,7 @@
-﻿using System;
+﻿/// <summary>
+/// This file holds operations handlers for primary analysis routes of the server
+/// </summary>
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -14,10 +17,17 @@ using StatisticalAnalysisApplication.Filters.Exception;
 
 namespace StatisticalAnalysisApplication.Controllers
 {
+    /// <summary>
+    /// PrimaryAnalysis Controller class of the Web Api
+    /// </summary>
     [SampleExceptionFilter]
     [EnableCors(origins: "*", headers:"*", methods:"*")]
     public class PrimaryAnalysisController : ApiController
     {
+        /// <summary>
+        /// Test method to ansure server is working
+        /// </summary>
+        /// <returns>Sample string stub</returns>
         [HttpGet]
         [Route("api/value")]
         public string GetValue()
@@ -25,6 +35,12 @@ namespace StatisticalAnalysisApplication.Controllers
             return "Value returned from server";
         }
 
+        /// <summary>
+        /// The controller method which analyze the sample data list that was passed to 
+        /// api/primaryAnalysis/analyze POST Server's web api method
+        /// </summary>
+        /// <param name="sampleData">Sample numeric data to perform statistical analysis on</param>
+        /// <returns>HTTP Response Object with results of primary statisical analysis</returns>
         [HttpPost]
         public IHttpActionResult Analyze([FromBody]List<double> sampleData)
         {
@@ -49,6 +65,13 @@ namespace StatisticalAnalysisApplication.Controllers
             return Ok<object>(result);
         }
 
+        /// <summary>
+        /// The controller method that analyze the sample data list passed to
+        /// api/primaryAnalysis/gistogram
+        /// and produce data that is needed for gistoram rendering
+        /// </summary>
+        /// <param name="sampleData">Sample numeric data to perform statistical analysis on</param>
+        /// <returns>HTTP Response Object with gistogram data object</returns>
         [HttpPost]
         [Route("api/primaryAnalysis/gistogram")]
         public IHttpActionResult CalculateGistogramData([FromBody]List<double> sampleData)

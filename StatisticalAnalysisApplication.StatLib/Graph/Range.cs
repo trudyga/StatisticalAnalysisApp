@@ -1,5 +1,12 @@
-﻿namespace StatisticalAnalysisApplication.StatLib.Graph
+﻿/// <summary>
+/// File that hold Range Entity
+/// </summary>
+namespace StatisticalAnalysisApplication.StatLib.Graph
 {
+    /// <summary>
+    /// Helper Range data stucture
+    /// Mainly used for gistogram
+    /// </summary>
     public struct Range
     {
         public Range(double lower, double upper) {
